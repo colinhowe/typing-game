@@ -1,0 +1,13 @@
+#!/bin/bash
+resize() {
+    convert "originals/$1" \
+        -define png:compression-strategy=1 \
+        -strip \
+        -define png:compression-filter=5 \
+        -define png:compression-level=9 \
+        -unsharp 0.25x0.25+8+0.065 \
+        -filter lanczos \
+        -set filename:base "%[base]" "$2/%[filename:base].jpg" 
+}
+
+resize "*.jpg[750x]" "."

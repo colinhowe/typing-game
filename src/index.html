@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>The best pony game in the world</title>
+    <title>The best typing game in the world</title>
     <style>
         html, body {
           width: 100%;
@@ -11,9 +11,63 @@
           padding: 0;
           overflow: hidden;
         }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #imageHolder {
+            width: 100%;
+            margin: 16px auto 8px auto;
+            flex-basis: 50%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            flex-grow: 1;
+        }
+
+        #typeInto {
+            width: 100%;
+            margin: 8px auto 8px auto;
+            flex-basis: 216px;
+            text-align: center;
+            font-size: 144px;
+            font-family: sans-serif;
+            flex-shrink: 0;
+            line-height: 216px;
+        }
+
+        #hint {
+            width: 100%;
+            margin: 8px auto 16px auto;
+            flex-basis: 14px;
+            text-align: center;
+            font-size: 14px;
+            font-family: sans-serif;
+            color: #888888;
+            flex-grow: 0;
+            flex-shrink: 0;
+            vertical-align: bottom;
+        }
+
+        @keyframes error {
+          from {background-color: red;}
+          to {background-color: white;}
+        }
+
+        @keyframes winner {
+          from {background-color: white;}
+          to {background-color: #88ff88;}
+        }
     </style>
 </head>
 <body>
-    <canvas id="mainCanvas"></canvas>
+    <div id="container">
+        <div id="imageHolder"></div>
+        <div id="typeInto">test</div>
+        <div id="hint">hint</div>
+    </div>
 </body>
 </html>
